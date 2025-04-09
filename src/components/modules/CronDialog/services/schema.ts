@@ -21,7 +21,7 @@ export const cronOptionSchema = z.object({
       },
       {
         message: "Wartość początkowa nie może być większa od wartości końcowej",
-        path: ["from"], // Dodaje błąd do pola 'from'
+        path: ["from"],
       },
     ),
   every: z.string(),

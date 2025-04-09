@@ -45,47 +45,43 @@ export const CronSection = ({
           )}
 
           {betweenTitle && (
-            <CronSectionTitle title={betweenTitle} type={TimeTypes.between} />
-          )}
-
-          {betweenTitle && (
-            <div className="mt-2 flex items-center space-x-2 ml-6">
-              <CronSelect
-                values={values}
-                defaultValue={option.between?.from}
-                disabled={option.type !== "between"}
-                onChange={(value) => {
-                  onChange({
-                    ...option,
-                    between: { ...option.between, from: value },
-                  });
-                }}
-              />
-              <span className="px-2 text-gray-500">-</span>
-              <CronSelect
-                values={values}
-                defaultValue={option.between?.to}
-                disabled={option.type !== "between"}
-                onChange={(value) => {
-                  onChange({
-                    ...option,
-                    between: { ...option.between, to: value },
-                  });
-                }}
-              />
+            <div>
+              <CronSectionTitle title={betweenTitle} type={TimeTypes.between} />
+              <div className="mt-2 flex items-center space-x-2 ml-6">
+                <CronSelect
+                  values={values}
+                  defaultValue={option.between?.from}
+                  disabled={option.type !== "between"}
+                  onChange={(value) => {
+                    onChange({
+                      ...option,
+                      between: { ...option.between, from: value },
+                    });
+                  }}
+                />
+                <span className="px-2 text-gray-500">-</span>
+                <CronSelect
+                  values={values}
+                  defaultValue={option.between?.to}
+                  disabled={option.type !== "between"}
+                  onChange={(value) => {
+                    onChange({
+                      ...option,
+                      between: { ...option.between, to: value },
+                    });
+                  }}
+                />
+              </div>{" "}
             </div>
           )}
         </div>
 
-        <div>
-          {everySecondTitle && (
+        {everySecondTitle && (
+          <div>
             <CronSectionTitle
               title={everySecondTitle}
               type={TimeTypes.everyX}
             />
-          )}
-
-          {everySecondTitle && (
             <div className="mt-2 ml-6">
               <CronSelect
                 values={values}
@@ -96,15 +92,12 @@ export const CronSection = ({
                 }}
               />
             </div>
-          )}
-        </div>
+          </div>
+        )}
 
-        <div>
-          {selectedTitle && (
+        {selectedTitle && (
+          <div>
             <CronSectionTitle title={selectedTitle} type={TimeTypes.selected} />
-          )}
-
-          {selectedTitle && (
             <div className="mt-2 ml-6">
               <CronSelect
                 values={values}
@@ -115,8 +108,8 @@ export const CronSection = ({
                 }}
               />
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </RadioGroup>
     </div>
   );
