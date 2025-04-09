@@ -71,7 +71,7 @@ export const CronSection = ({
                     });
                   }}
                 />
-              </div>{" "}
+              </div>
             </div>
           )}
         </div>
