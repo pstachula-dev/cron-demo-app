@@ -19,6 +19,7 @@ export const useCronScheduleForm = () => {
   const onSubmit = useCallback(
     (data: string[]) => {
       form.setValue("schedule", data.join(" "));
+      form.trigger();
     },
     [form],
   );
